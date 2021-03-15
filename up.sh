@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ ${#} != 1 ]]; then
-    echo "ERROR: YOU FORGOT TO ENTER THE 'DOMAIN NAME' (e.g. up.sh github.com)"
+    echo "Bad Syntex. Usage: ${0} <domain name> (e.g. ${0} github.com)"
     exit
 fi
 

@@ -9,7 +9,8 @@ if [[ `ping -c 1 8.8.8.8 | wc -l` -eq 0 ]]; then
 fi
 
 while :; do
-    if [[ `ping -c 1 8.8.8.8 | grep packet | awk '{print $4}'` -eq 1 ]]; then
+    if [[ `ping -c 1 8.8.8.8 | grep packet | awk '{print $4}'` -eq 1
+        || `ping -c 1 8.8.4.4 | grep packet | awk '{print $4}'` -eq 1 ]]; then
         if [[ discon -eq 1 ]] ; then
             say "sir, you are connected"
             echo ""

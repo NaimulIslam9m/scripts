@@ -6,19 +6,17 @@ if [[ ${#} != 1 ]]; then
 fi
 
 
-if [[ `dig ${1} | grep ANSWER | wc -l` -eq 2 ]]; then
-
+if [[ -z "`dig +short ${1}`" ]]; then
+    echo "INVALID DOMAIN NAME"
+else
     x=1
     while :; do
         if [[ `ping -c 1 ${1} | grep packet | awk '{print $4}'` -eq 1 ]]; then
-            say 'sir, you are connected'
+            say 'sir, you are connected' &> /dev/null
             break
         else
             echo $x
             ((x+=1))
         fi
     done
-
-else
-    echo "INVALID DOMAIN NAME"
 fi

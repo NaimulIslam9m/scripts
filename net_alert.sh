@@ -17,7 +17,9 @@ while :; do
             say "sir, you are connected"
             if [[ discon -eq 1 ]]; then
                 echo ""
-            discon=0
+                discon=0
+            fi
+            first=0
         fi
         echo ✅ $up
         ((up+=1))

@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo docker run -it --rm -v "$PWD":/shared remnux/remnux:1.0 fish

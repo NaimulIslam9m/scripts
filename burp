@@ -1,0 +1,3 @@
+#!/bin/bash
+cd ~/apps/burpsuite_pro_v2023.2.1/
+java -jar burploader.jar
